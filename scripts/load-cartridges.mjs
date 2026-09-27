@@ -83,7 +83,7 @@ for (const code of readdirSync(showsDir).filter((n) => !n.startsWith('.')).sort(
 
     // The style book a cartridge names (the Marquee Branding Specification §7): its style.json
     // is a file of this cartridge and parses, every face it declares — on every platform — is
-    // a file of this cartridge too, and every lane fetches all of them (§7.7).
+    // a file of this cartridge too, and every lane fetches all of them (the Cartridge Specification §7.7).
     const styleItemId = snapshot.project.brandStyleItemId
     if (styleItemId !== null) {
       const item = snapshot.mediaItems.get(styleItemId)
