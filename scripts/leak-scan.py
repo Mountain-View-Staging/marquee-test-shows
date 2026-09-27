@@ -7,11 +7,10 @@ Every file is scanned, binary media included: text files line by line, every oth
 its printable strings (like `strings -a -n 4`). A match fails the scan. What is refused:
 
 - live service hosts, and machine paths (a file must never carry where it was made);
-- the two real brand names that are likeliest to leak into an example;
 - the shapes real show and screen codes take, and internal record ids — in text and in
   database strings only: random compressed bytes can spell a short code, so media are held
   to the longer literals;
-- the real show codes and event names this project has used. They are listed as SHA-256
+- the real show codes, event names and brand names this project has met. They are listed as SHA-256
   digests, not as text, so that this file does not publish what it guards against. A match
   is reported by position and length, never by its text (CI logs are public too).
 
@@ -25,11 +24,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SELF = os.path.relpath(os.path.abspath(__file__), ROOT)
 
-# Literal text anywhere, any case: hosts, machine paths, brand names.
+# Literal text anywhere, any case: hosts and machine paths.
 LITERALS = re.compile(
     r"mvsmarquee|r2\.dev|workers\.dev|amazonaws|cloudflarestorage|"
-    r"/Volumes/|/Users/|/private/(?:var|tmp)/|file:///|"
-    r"salesforce|servicenow",
+    r"/Volumes/|/Users/|/private/(?:var|tmp)/|file:///",
     re.IGNORECASE)
 
 # Shapes of real codes and internal ids, case-sensitive — text and database strings only.
@@ -49,6 +47,8 @@ DIGESTS = {
     "8972ef2d9fa4861c2c8aae088806c536b5669d2eabc5b596f9418dfd62969eb4": (8, "inside"),
     "45135e28ac3348c286e27e9f95c2ad653ab3bd5faa18b14e0ee56816b6df0398": (8, "inside"),
     "0fb6101d02816fc0340db3d12cdc1ad76bca2c28adff214ac02d9ca58e69f34e": (10, "inside"),
+    "3ccbd9105a45d8fcd4a0101c6532c599f6f59cfa4d4ce378792f547a869a4bea": (10, "inside"),
+    "b5738c169b693bee89e1b74ebd48e0dfa53a34e8571790b7727721a0bfadc470": (10, "inside"),
 }
 EXACT = {d for d, (_, mode) in DIGESTS.items() if mode == "exact"}
 INSIDE_LENGTHS = sorted({n for n, mode in DIGESTS.values() if mode == "inside"})

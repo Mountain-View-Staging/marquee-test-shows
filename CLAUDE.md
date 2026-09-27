@@ -15,5 +15,5 @@ scripts, the workflows and `legacy/README.md` / `legacy/expected.json` are writt
 - A test copies a show before opening it; `scripts/lock.sh` makes the authoring databases
   read-only so nothing opens one here in place.
 - The leak scan's patterns live in `scripts/leak-scan.py` alone (the scan skips that file). Real
-  codes and event names are listed there as SHA-256 digests, never as text, and a finding is
+  codes, event names and brand names are listed there as SHA-256 digests, never as text, and a finding is
   reported by position, never by its text: CI logs are public too.
