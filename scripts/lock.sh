@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 # Makes every show's authoring database read-only on disk, so a Studio pointed at this
 # checkout by mistake cannot migrate one in place (a test copies a show; it never opens one
-# here). Git does not record the mode, so run this after a clone or a reset.
+# here). Git does not record the mode, so run this after a clone or a reset. A copy keeps the
+# mode: make a copy writable (chmod u+w) before a test opens it.
 #
 #   scripts/lock.sh            the databases read-only
 #   scripts/lock.sh --unlock   writable again

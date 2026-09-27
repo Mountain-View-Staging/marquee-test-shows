@@ -132,7 +132,10 @@ Every pixel is drawn by the generator; no font file is shipped (text is drawn in
 
 - **Copy, then open.** Copy the show's folder (or `sqlite3 … ".backup …"` its database) and
   open the copy. `scripts/lock.sh` makes the authoring databases read-only on disk, so nothing
-  opens one here by mistake; `scripts/lock.sh --unlock` undoes it.
+  opens one here by mistake; `scripts/lock.sh --unlock` undoes it. A copy keeps the file's mode
+  (`cp`, `FileManager.copyItem` and Node's `copyFileSync` alike), so a copy of a locked
+  database must be made writable (`chmod u+w`) before Studio's data layer can open it; a
+  `sqlite3 ".backup"` copy is writable already. A fresh clone is unlocked.
 - **Reset:** `scripts/reset.sh` puts `shows/` and `legacy/` back exactly as committed.
 - The authoring databases are at the schema's newest migration, committed in rollback-journal
   mode with no WAL; Studio switches a copy to WAL when it opens it.
