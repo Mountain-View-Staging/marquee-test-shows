@@ -1,0 +1,86 @@
+{
+  "files" : [
+    {
+      "name" : "example/example-2026/1/assets/backing-landscape.jpg",
+      "sha256" : "915a404cff69091aa3f528fa90a016627c5677c48b8492edba2e3ded7455814a",
+      "size" : 451733
+    },
+    {
+      "name" : "example/example-2026/1/assets/backing-portrait.jpg",
+      "sha256" : "42a1e7f26c39bbb8e259ab492ba9bb46f1d828b990d9018eef57b7ba94e771c7",
+      "size" : 455434
+    },
+    {
+      "name" : "example/example-2026/1/assets/mark-white.png",
+      "sha256" : "b322f64a8d208007ba291007c092c025218c6a17591e1b0f439f9fa0d3f60560",
+      "size" : 17738
+    },
+    {
+      "name" : "example/example-2026/1/fonts/apple/Inter-Bold.otf",
+      "sha256" : "9fc6261e817d0b1b2bf1953d8799bb1c837d11aeebbf83ae352e7b4d6de6425d",
+      "size" : 631880
+    },
+    {
+      "name" : "example/example-2026/1/fonts/apple/Inter-BoldItalic.otf",
+      "sha256" : "84e07cd77951a855c668f71e63af261f42d019dc80e963326b4c560b1fca8dcd",
+      "size" : 609372
+    },
+    {
+      "name" : "example/example-2026/1/fonts/apple/Inter-Italic.otf",
+      "sha256" : "3bdf49f72ad2f2959a2619ceef700784504f6d17f502e2e2bc6edce5d43ca631",
+      "size" : 589784
+    },
+    {
+      "name" : "example/example-2026/1/fonts/apple/Inter-Regular.otf",
+      "sha256" : "d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799",
+      "size" : 609600
+    },
+    {
+      "name" : "example/example-2026/1/fonts/apple/Inter-SemiBold.otf",
+      "sha256" : "0a4d30778fa2dc239368d90fd854b88b27e7ede737450da72686a90eca66f02c",
+      "size" : 629912
+    },
+    {
+      "name" : "example/example-2026/1/fonts/apple/InterDisplay-Black.otf",
+      "sha256" : "84ca5a51b3303c01b48cdd271637d3d20c263e09d00ec0ff2a945f122492a4d0",
+      "size" : 623980
+    },
+    {
+      "name" : "example/example-2026/1/fonts/web/Inter-Bold.woff2",
+      "sha256" : "fa888127b6da015b65569f0351f3b5c391ad928904951f1c20e9f8462a8d95ea",
+      "size" : 114840
+    },
+    {
+      "name" : "example/example-2026/1/fonts/web/Inter-BoldItalic.woff2",
+      "sha256" : "4a10532d76c90c4597c0ad4bfc9284600e597d3012dd1ec16c1d44e0ad0058ab",
+      "size" : 121500
+    },
+    {
+      "name" : "example/example-2026/1/fonts/web/Inter-Italic.woff2",
+      "sha256" : "2d078cb3bc8f934740d53b39dd23b0678f2f97477e49ec785dd9d8acd8b96bfc",
+      "size" : 117700
+    },
+    {
+      "name" : "example/example-2026/1/fonts/web/Inter-Regular.woff2",
+      "sha256" : "e06f6b1bc553aaea4e4668023ed0ab0a147129c3107f511bc7d03d361b0ae085",
+      "size" : 111268
+    },
+    {
+      "name" : "example/example-2026/1/fonts/web/Inter-SemiBold.woff2",
+      "sha256" : "5cb7103e4e605989afebc03d989c79201e54b21b5183db33981f70db9178a301",
+      "size" : 114812
+    },
+    {
+      "name" : "example/example-2026/1/fonts/web/InterDisplay-Black.woff2",
+      "sha256" : "05650cb83c70fda2a465eade0c0a1a6c25d37ec49df3cd74b7e564683f9729f1",
+      "size" : 110308
+    },
+    {
+      "name" : "example/example-2026/1/style.json",
+      "sha256" : "b9ca051e7b1eac59e43fcbddfe99f9bc414249cbb4aa62bd4fb1d6a97deb087b",
+      "size" : 1440
+    }
+  ],
+  "folder" : "brands",
+  "scope" : "*"
+}

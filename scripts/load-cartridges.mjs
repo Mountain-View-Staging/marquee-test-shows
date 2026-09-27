@@ -80,6 +80,28 @@ for (const code of readdirSync(showsDir).filter((n) => !n.startsWith('.')).sort(
         + `; scheduled: portrait ${slots.portrait.length}, landscape ${slots.landscape.length}, demo ${slots.demo_station.length}`
         + `; locations ${snapshot.locations.map((l) => l.locationId).join(', ')}`
     }
+
+    // The style book a cartridge names (the Marquee Branding Specification §7): its style.json
+    // is a file of this cartridge and parses, every face it declares — on every platform — is
+    // a file of this cartridge too, and every lane fetches all of them (§7.7).
+    const styleItemId = snapshot.project.brandStyleItemId
+    if (styleItemId !== null) {
+      const item = snapshot.mediaItems.get(styleItemId)
+      const entry = item && snapshot.manifest.get(item.portraitFileId ?? item.landscapeFileId)
+      if (!entry) fail(`${code}/${name}: the style book item ${styleItemId} names no file of this cartridge`)
+      else {
+        const idOf = new Map([...snapshot.manifest.entries()].map(([id, m]) => [m.deliverableFileName, id]))
+        const files = JSON.parse(readFileSync(join(folder, entry.deliverableFileName), 'utf8'))?.fonts?.family?.files ?? {}
+        const declared = Object.values(files).flat()
+        const absent = declared.filter((f) => !idOf.has(f))
+        if (!declared.length || absent.length) fail(`${code}/${name}: the style book declares ${declared.length} faces, ${absent.length} not in the cartridge`)
+        for (const lane of ['portrait', 'landscape']) {
+          const fetched = filesForLanes(snapshot, { lanes: [lane] })
+          if (!declared.every((f) => fetched.has(idOf.get(f)))) fail(`${code}/${name}: the ${lane} lane does not fetch every face`)
+        }
+        line += `; style book ${snapshot.project.brandStyle}: ${Object.entries(files).map(([p, list]) => `${list.length} ${p}`).join(' + ')} faces, in every lane`
+      }
+    }
     console.log(line + `; ${snapshot.warnings.length} warnings`)
   }
 }

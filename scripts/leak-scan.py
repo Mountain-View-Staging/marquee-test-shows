@@ -98,7 +98,9 @@ def main():
         for name in sorted(files):
             path = os.path.join(base, name)
             rel = os.path.relpath(path, ROOT)
-            if rel == SELF or name == ".DS_Store":
+            # In a git worktree `.git` is a FILE naming its gitdir (a machine path). Git never
+            # tracks a path called `.git`, so it is never published; a clone has a directory.
+            if rel == SELF or name in (".DS_Store", ".git"):
                 continue
             scanned += 1
             hits += scan_line(f"{rel} (its path)", rel, full=True)

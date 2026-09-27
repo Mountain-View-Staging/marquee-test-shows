@@ -5,3 +5,5 @@
 *.heic  binary
 *.webp  binary
 *.mp4   binary
+*.otf   binary
+*.woff2 binary
