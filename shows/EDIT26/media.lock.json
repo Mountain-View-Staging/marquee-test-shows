@@ -1,0 +1,111 @@
+{
+  "files" : [
+    {
+      "name" : "183dd884-34fe-4eba-8108-a5a2870f693c.mp4",
+      "sha256" : "8bc103c8bf702a5ef5e950854fbbfaa62d46250a7a0e72f062f4acc74051a0a0",
+      "size" : 843681
+    },
+    {
+      "name" : "1d0d2bd6-71ee-4643-98a7-12d3edae42c4.mp4",
+      "sha256" : "ee462acc7b46f13b0e4b75ff7824d556859946cc2e7f07fad7c602def967bf67",
+      "size" : 847007
+    },
+    {
+      "name" : "24c4f123-444f-4caf-b47d-360b9af38770.mp4",
+      "sha256" : "a87789a2a2c7aae3ae44a6b389bea6d986dc3ae865eed1d53c76ca18220eee85",
+      "size" : 657355
+    },
+    {
+      "name" : "3a786321-e1c7-4beb-9fb4-e767d9da6a18.heic",
+      "sha256" : "b7b424ec3194cf9e750b523ee52323691b384a5cf522da9291b8abb5bae1309e",
+      "size" : 13512
+    },
+    {
+      "name" : "414d925e-3852-447b-8a0b-21f129cc0fc4.mp4",
+      "sha256" : "08e7967b9e21123f5a33f5451ee66fff5f3f94ee86b0e4c73767e20d4b4adc07",
+      "size" : 526080
+    },
+    {
+      "name" : "424beafd-c79c-4fdb-b8b1-59a9e819e090.heic",
+      "sha256" : "bc5ace8cfd8ac020b5804813c8f867957c9b34f28b067c2fbff6e79dfd9ae808",
+      "size" : 20506
+    },
+    {
+      "name" : "8124c483-d3fc-4c22-b769-b19191a19a2c.mp4",
+      "sha256" : "46c0e736c6cf6bf1ceea0fdf7bebaf5781e0247dc515855fb0cc606104ca6aae",
+      "size" : 583458
+    },
+    {
+      "name" : "867a07a2-eb94-44e7-8f02-bada589600c0.png",
+      "sha256" : "1c235869e758da8d51c5307fb23e30e1579bd1583f478ee242bbd3e708779668",
+      "size" : 54040
+    },
+    {
+      "name" : "8685b498-3e96-4af9-9a42-ca016668ef31.mp4",
+      "sha256" : "c38e83a860418d7a0801db7b7e54c5f5f1cfa681fb2582e0d91b0c59e968ae87",
+      "size" : 729442
+    },
+    {
+      "name" : "8ca42c2f-bab8-4114-aefa-9071f5312f1f.mp4",
+      "sha256" : "0070ea50d62057dd5caf6e34c16ef1fa190fd95c89719612d0d29ec187eec6bc",
+      "size" : 561981
+    },
+    {
+      "name" : "94ebc927-85d6-40ee-9ec4-175e4956fa36.png",
+      "sha256" : "24b245971f8a3c84b99988785c85d7459f12e748e14549cd9623351f7a37a72d",
+      "size" : 51124
+    },
+    {
+      "name" : "EDIT1.db",
+      "sha256" : "aa33711f376b23a5ada8d06a795ac9b39ee11c5e485aca3d53e8b517551efae4",
+      "size" : 94208
+    },
+    {
+      "name" : "_studio/Marquee.db",
+      "sha256" : "79ca48f6ab427d10d91a72d419857a657aed9836bd442993fd0ec3edb3627fd4",
+      "size" : 208896
+    },
+    {
+      "name" : "aaf79d82-9894-44db-a4c8-9cc42539487e.png",
+      "sha256" : "087c53b88e8190b155d6b397e0e52c507f61284c2b2e92c8fd877c628035bd64",
+      "size" : 38143
+    },
+    {
+      "name" : "abbd3345-415c-41fd-b637-5ffed32c2ce2.mp4",
+      "sha256" : "a199103255114417864b6c5c73f479a425f254802ba9ccfafd973f215373ed43",
+      "size" : 732651
+    },
+    {
+      "name" : "b7ec42be-6930-489d-a117-25972af466e5.mp4",
+      "sha256" : "5c84b1e83500adaded963aa9b549778d18f35a9c8e71209182488448a8e8e967",
+      "size" : 473840
+    },
+    {
+      "name" : "c1cfd2b0-b713-4a90-9668-9d8ff684459f.heic",
+      "sha256" : "aba8370caf6d273275ed122dfeb8b62c9efaf49fa687a03b37e63da2d630559d",
+      "size" : 14562
+    },
+    {
+      "name" : "c2af8e24-d35d-4b4a-923b-cb874dae1db1.png",
+      "sha256" : "f6afe3a5c1cf655beb5d90bc4f6bc80ef85a029bbdba7533373cc775456619de",
+      "size" : 49525
+    },
+    {
+      "name" : "d2d304f9-b9e8-4857-80e3-bcd8d7f2ab9f.heic",
+      "sha256" : "20b30101efb219c03bb87f6cebe2261c8d6f7d6585e97ca496c2a2014d9dc991",
+      "size" : 13258
+    },
+    {
+      "name" : "f3eb2c6e-b584-46e7-a8d4-cd74a07eaa48.mp4",
+      "sha256" : "aadbfe5e63b64eb6b5b4590738d2d0a28c83009ac57fea132a0363df535260b3",
+      "size" : 573679
+    },
+    {
+      "name" : "project.db",
+      "sha256" : "8a154dd28a784deb01b89ae3cc608560ddefe9e34ffdfa92b07ba46f5f357f01",
+      "size" : 45056
+    }
+  ],
+  "folder" : "shows/EDIT26",
+  "scope" : "*"
+}

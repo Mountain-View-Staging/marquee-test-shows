@@ -1,0 +1,7 @@
+{
+  "about": "What a v25 Loader must say about each pre-v25 artifact here. scripts/load-cartridges.mjs checks it.",
+  "artifacts": {
+    "pre-v25-surface.db": { "kind": "surface", "refusal": "column_missing" },
+    "pre-v25-project.db": { "kind": "project", "refusal": "not_v25" }
+  }
+}

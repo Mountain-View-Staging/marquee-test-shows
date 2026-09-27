@@ -1,0 +1,16 @@
+{
+  "files" : [
+    {
+      "name" : "pre-v25-project.db",
+      "sha256" : "7572bff04d20422c7fc3102bc8795bee3387a66b1ec57e98184033edbef3b1a6",
+      "size" : 81920
+    },
+    {
+      "name" : "pre-v25-surface.db",
+      "sha256" : "819bedf07dab1e31fbdab3ff4528c02eac58f6c798cbd38279f9e20a1e60f18b",
+      "size" : 163840
+    }
+  ],
+  "folder" : "legacy",
+  "scope" : ".db"
+}

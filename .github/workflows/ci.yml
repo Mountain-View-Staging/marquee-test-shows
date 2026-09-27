@@ -1,0 +1,45 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  leak-scan:
+    name: Leak scan (public repository)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: No client, show, host, machine path or internal id — text and binary media alike
+        run: python3 scripts/leak-scan.py
+
+  locks:
+    name: Lock files and the size budget
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Every file as locked, nothing unlocked
+        run: scripts/verify.sh
+      - name: Every file under 20 MB, the repository under 80 MB
+        run: scripts/budget.sh
+
+  loader:
+    name: Every cartridge through the reference Loader
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # The Cartridge Specification at the commit these shows were checked against.
+      - uses: actions/checkout@v4
+        with:
+          repository: Mountain-View-Staging/marquee-cartridge-spec
+          ref: 9285b014066a7e4a8263a3612b24f83361595d94
+          path: spec
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: 0 refusals and 0 warnings among the shows; the expected refusals for legacy/
+        run: node --no-warnings scripts/load-cartridges.mjs --engine spec/engine/dist/node.js
