@@ -63,7 +63,7 @@ orientation over that schedule.
 |---|---|---|---|
 | `PORT1` (rev 2) | `PORT1-A` (a portrait sign) | the Rotation | **Fetching by lane.** The cartridge lists 22 files; a portrait device needs 10, and the 12 files only a landscape slot names stay at the origin (a landscape device needs 14). |
 | `TAKE1` (rev 1) | `TAKE1-A`, `TAKE1-B` | the Takeovers | **A heavily directed show**, 1,025 directives over seven days: two entries on a standing ON, a standard entry on the hour (on at :00, off at :50), takeovers at :10–:20 and :30–:40, each armed OFF before Day 1. Two installations sharing one cartridge. 12 files, 6 per lane. |
-| `DEMO1` (rev 5) | `DEMO1-A` | the Rotation; DemoStation | **A DemoStation.** While a demo is on, its picture-in-picture plays the same Rotation with the other orientation's files. From before Day 1: a still background with a transparent overlay; from Day 2: a video background with an opaque overlay (landscape only — it covers the picture-in-picture, which is the case to warn about); demo off at 18:00 on Day 3; a still background alone from Day 4. The branding has both orientations except the opaque overlay. 29 files: a portrait device needs 13 and a landscape one 18, and a DemoStation host of either orientation all 29. |
+| `DEMO1` (rev 5) | `DEMO1-A` | the Rotation; DemoStation | **A DemoStation.** While a demo is on, its picture-in-picture plays the same Rotation with the other orientation's files. From before Day 1: a still background with a transparent overlay; from Day 2: a video background with an opaque overlay (landscape only — it covers the picture-in-picture, which is the case to warn about); demo off at 18:00 on Day 3; a still background alone from Day 4. The branding has both orientations except the opaque overlay. 29 files: a portrait device needs 10 and a landscape one 14 — the Rotation's, as on PORT1: the 7 files of the backgrounds and overlays are drawn only by a DemoStation, so only a DemoStation host fetches them (specification §7.7) — and a DemoStation host of either orientation needs all 29. |
 
 `project.db` carries the two wallpapers (show and desktop, each with both orientations: 4 files).
 The project's default backing (both orientations) rides in every surface cartridge.
@@ -227,7 +227,7 @@ system's own face, the style book's mark in Inter.
 | `python3 scripts/leak-scan.py` | CI, and before the Pages deploy | Every file, binary media included (as its printable strings): no live host, machine path, brand name, code-shaped token or internal id. |
 | `scripts/verify.sh` | CI, and before the Pages deploy | Every `media.lock.json` against its folder: each file at its size and SHA-256, nothing unlisted. |
 | `scripts/budget.sh` | CI | Every file under 20 MB; the repository under 80 MB. |
-| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `a34e6d2` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
+| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `4689d8e` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
 
 ## Regenerating
 
