@@ -11,7 +11,8 @@
     folder, at its size and SHA-256 — what a device would fetch and verify;
   - legacy/ is refused with exactly the codes legacy/expected.json names.
 
-  It prints, for each surface, the files a device fetches per lane (§7.7).
+  It prints, for each surface, the files a device fetches per lane (§7.7) — a lane is one
+  orientation over the surface's one schedule (§5.1) — and the schedule's two slots.
 */
 import { createHash } from 'node:crypto'
 import { existsSync, readFileSync, readdirSync } from 'node:fs'
@@ -77,7 +78,7 @@ for (const code of readdirSync(showsDir).filter((n) => !n.startsWith('.')).sort(
     if (kind === 'surface') {
       const slots = snapshot.scheduleBySlot
       line += `; DemoStation host ${lanes(['portrait'], true)} / ${lanes(['landscape'], true)}`
-        + `; scheduled: portrait ${slots.portrait.length}, landscape ${slots.landscape.length}, demo ${slots.demo_station.length}`
+        + `; schedule: playlist ${slots.playlist.length}, demo ${slots.demo_station.length}`
         + `; locations ${snapshot.locations.map((l) => l.locationId).join(', ')}`
     }
 

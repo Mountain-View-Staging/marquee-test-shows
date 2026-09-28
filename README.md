@@ -55,11 +55,15 @@ Seven venue days, 2026-08-27 to 2026-09-02, `America/New_York`. 36 media files (
 clips) with 71 generated renditions, 24 items, three playlists, 1,151 directives, and one
 session set with 28 sessions. Published: `project.db` (rev 1) and three surfaces.
 
-| Surface | Locations | Lanes | What it exercises |
+Every surface has **one schedule**, whatever the orientation (specification §5.1): a device plays
+the scheduled playlist with the files of the orientation it renders, so a lane is simply one
+orientation over that schedule.
+
+| Surface | Locations | Schedule | What it exercises |
 |---|---|---|---|
-| `PORT1` (rev 2) | `PORT1-A` | portrait only: the Rotation | **Fetching by lane.** The cartridge lists 22 files; a portrait device needs 10, and the 12 files only a landscape slot names stay at the origin. |
-| `TAKE1` (rev 2) | `TAKE1-A`, `TAKE1-B` | both: the Takeovers on each | **A heavily directed show**, 1,025 directives over seven days: two entries on a standing ON, a standard entry on the hour (on at :00, off at :50), takeovers at :10–:20 and :30–:40, each armed OFF before Day 1. Two installations sharing one cartridge. 12 files, 6 per lane. |
-| `DEMO1` (rev 6) | `DEMO1-A` | landscape: the Rotation; portrait: the Mini player; DemoStation | **A DemoStation.** From before Day 1: a still background with a transparent overlay; from Day 2: a video background with an opaque overlay (landscape only — it covers the picture-in-picture, which is the case to warn about); demo off at 18:00 on Day 3; a still background alone from Day 4. The branding has both orientations except the opaque overlay. A DemoStation host needs all 32 files. |
+| `PORT1` (rev 2) | `PORT1-A` (a portrait sign) | the Rotation | **Fetching by lane.** The cartridge lists 22 files; a portrait device needs 10, and the 12 files only a landscape slot names stay at the origin (a landscape device needs 14). |
+| `TAKE1` (rev 1) | `TAKE1-A`, `TAKE1-B` | the Takeovers | **A heavily directed show**, 1,025 directives over seven days: two entries on a standing ON, a standard entry on the hour (on at :00, off at :50), takeovers at :10–:20 and :30–:40, each armed OFF before Day 1. Two installations sharing one cartridge. 12 files, 6 per lane. |
+| `DEMO1` (rev 5) | `DEMO1-A` | the Rotation; DemoStation | **A DemoStation.** While a demo is on, its picture-in-picture plays the same Rotation with the other orientation's files. From before Day 1: a still background with a transparent overlay; from Day 2: a video background with an opaque overlay (landscape only — it covers the picture-in-picture, which is the case to warn about); demo off at 18:00 on Day 3; a still background alone from Day 4. The branding has both orientations except the opaque overlay. 29 files: a portrait device needs 13 and a landscape one 18, and a DemoStation host of either orientation all 29. |
 
 `project.db` carries the two wallpapers (show and desktop, each with both orientations: 4 files).
 The project's default backing (both orientations) rides in every surface cartridge.
@@ -72,7 +76,9 @@ window (2 → 12 s), a countdown trimmed 2.0 → 6.5 in both orientations, and t
 Fifteen entries are on a standing ON at 00:00 each day, one of them disabled (a Studio Player
 flag no Surface sees); the last three have no directive at all and never play.
 
-**The Takeovers** (5 entries) and **the Mini player** (3 portrait entries, standing ON each day).
+**The Takeovers** (5 entries). **The Mini player** (3 portrait entries, standing ON each day)
+is scheduled nowhere: a DemoStation's picture-in-picture is the surface's own rotation, so no
+cartridge carries it.
 
 **The session board, "Main room"**: four sessions a day for seven days (09:00, 10:30, 13:00 and
 15:30, 45 minutes each), the schedule layout, a video backing in both orientations and a
@@ -108,8 +114,8 @@ at 12:10 PM row 4 is the takeover until 12:30 PM.
 Studio's rail reads the running starts **0, 8, 13, 16, 26, 30.5, 36.5, 46.5, 54.5, —, 59.5, —**
 in portrait and **0, 8, 13, 16, 26, 30.5, 36.5, 46.5, 54.5, —, —, 59.5** in landscape.
 
-The surface `EDIT1` (location `EDIT1-A`) schedules the playlist on both lanes, so a device can
-play the sample: 7 files, 3 for the portrait lane and 5 for the landscape one.
+The surface `EDIT1` (location `EDIT1-A`) schedules the playlist, so a device of either
+orientation can play the sample: 7 files, 3 for the portrait lane and 5 for the landscape one.
 
 ### `BRAND26` — the branded show
 
@@ -124,7 +130,7 @@ project's reference recorded — and one room's session board, in both layouts, 
 | **Media** | 16 files: 13 **brand members** (6 `font/otf`, 6 `font/woff2`, the delivered `style.json`) and 3 assets selected from the style's catalogue (the backing in both orientations, the mark), each the portal's file byte for byte. 5 generated renditions (HEIC `optimized` for all three assets, JPEG `webOptimized` for the two backings; the mark, a PNG with alpha, has none). |
 | **Sessions** | 48: one on every hour of both days, 45 minutes each, in one room ("Main hall"). Titles of every length, with accents, an en dash, an ampersand and a curly apostrophe; the two breaks name no presenter. Whenever a Surface opens the show, a session is on or starts within 15 minutes. |
 | **Boards** | Two session sets over the same sessions: `["schedule"]` and `["now-next"]`, both named for the room, both with the style's backing and mark. The playlist **"Boards"** holds both, on from 00:00 of each day. |
-| **Published** | `project.db` (rev 1): no files — the style book rides in the surface cartridge, and `project.db` keeps only the address. `BRAND1.db` (rev 2), location `BRAND1-A`, both lanes: 16 files, 21 renditions. |
+| **Published** | `project.db` (rev 1): no files — the style book rides in the surface cartridge, and `project.db` keeps only the address. `BRAND1.db` (rev 1), location `BRAND1-A`, the Boards on its one schedule: 16 files, 21 renditions. |
 
 **Files per lane:** a portrait device fetches **15** of `BRAND1.db`'s 16 files (the 13 brand members,
 the portrait backing, the mark), and a landscape device 15 (the landscape backing instead). **Brand
@@ -221,7 +227,7 @@ system's own face, the style book's mark in Inter.
 | `python3 scripts/leak-scan.py` | CI, and before the Pages deploy | Every file, binary media included (as its printable strings): no live host, machine path, brand name, code-shaped token or internal id. |
 | `scripts/verify.sh` | CI, and before the Pages deploy | Every `media.lock.json` against its folder: each file at its size and SHA-256, nothing unlisted. |
 | `scripts/budget.sh` | CI | Every file under 20 MB; the repository under 80 MB. |
-| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `9285b01` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
+| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `d54bd88` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
 
 ## Regenerating
 
