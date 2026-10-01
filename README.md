@@ -127,15 +127,17 @@ project's reference recorded — and one room's session board, in both layouts, 
 
 | | |
 |---|---|
-| **Media** | 16 files: 13 **brand members** (6 `font/otf`, 6 `font/woff2`, the delivered `style.json`) and 3 assets selected from the style's catalogue (the backing in both orientations, the mark), each the portal's file byte for byte. 5 generated renditions (HEIC `optimized` for all three assets, JPEG `webOptimized` for the two backings; the mark, a PNG with alpha, has none). |
+| **Media** | 18 files: 13 **brand members** (6 `font/otf`, 6 `font/woff2`, the delivered `style.json`), 3 assets selected from the style's catalogue (the backing in both orientations, the mark), each the portal's file byte for byte, and 2 **session board template packages** (`application/zip`, specification §5.15 and `TEMPLATE.md`): `example-board-v1.marqueetemplate.zip`, the Show's template, and `example-board-two-v1.marqueetemplate.zip`, adapted from it (`basedOn`, one CSS rule — a larger title) and set on the second session set. Both are the specification's reference template, zipped by the generator. 5 generated renditions (HEIC `optimized` for all three assets, JPEG `webOptimized` for the two backings; the mark, a PNG with alpha, has none; a package is never renditioned). |
 | **Sessions** | 48: one on every hour of both days, 45 minutes each, in one room ("Main hall"). Titles of every length, with accents, an en dash, an ampersand and a curly apostrophe; the two breaks name no presenter. Whenever a Surface opens the show, a session is on or starts within 15 minutes. |
-| **Boards** | Two session sets over the same sessions: `["schedule"]` and `["now-next"]`, both named for the room, both with the style's backing and mark. The playlist **"Boards"** holds both, on from 00:00 of each day. |
-| **Published** | `project.db` (rev 1): no files — the style book rides in the surface cartridge, and `project.db` keeps only the address. `BRAND1.db` (rev 1), location `BRAND1-A`, the Boards on its one schedule: 16 files, 21 renditions. |
+| **Boards** | Two session sets over the same sessions, both named for the room, both with the style's backing and mark; a set carries no render mode (which layouts a sign shows is the device's board variant, §5.15). The first renders with the Show's template, the second with its own (`session_set.template_item_id`), each with its `template_settings` (`{ "vars": { "sponsorName": … } }`). The playlist **"Boards"** holds both, on from 00:00 of each day. |
+| **Published** | `project.db` (rev 1): no files — the style book and the templates ride in the surface cartridge; `project.db` keeps the address and the template settings and drops the pointers. `BRAND1.db` (rev 1), location `BRAND1-A`, the Boards on its one schedule: 18 files, 23 renditions. |
 
-**Files per lane:** a portrait device fetches **15** of `BRAND1.db`'s 16 files (the 13 brand members,
-the portrait backing, the mark), and a landscape device 15 (the landscape backing instead). **Brand
-members per platform:** 6 Apple faces and 6 web faces plus the `style.json` — all 13 in every lane,
-because a cartridge carries every platform's faces and each client registers its own.
+**Files per lane:** a portrait device fetches **17** of `BRAND1.db`'s 18 files (the 13 brand members,
+the two template packages, the portrait backing, the mark), and a landscape device 17 (the landscape
+backing instead). **Brand members per platform:** 6 Apple faces and 6 web faces plus the `style.json` —
+all 13 in every lane, because a cartridge carries every platform's faces and each client registers its
+own. **A template package is on every lane too** (§5.15): a device of either orientation renders the
+board with it.
 
 Finding them: the project's `brand_style` is `example/example-2026/1` and its `brand_style_item_id`
 names the item **"Style book — example/example-2026/1"**, whose file is the delivered `style.json`.
@@ -227,7 +229,7 @@ system's own face, the style book's mark in Inter.
 | `python3 scripts/leak-scan.py` | CI, and before the Pages deploy | Every file, binary media included (as its printable strings): no live host, machine path, brand name, code-shaped token or internal id. |
 | `scripts/verify.sh` | CI, and before the Pages deploy | Every `media.lock.json` against its folder: each file at its size and SHA-256, nothing unlisted. |
 | `scripts/budget.sh` | CI | Every file under 20 MB; the repository under 80 MB. |
-| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `4689d8e` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
+| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `46cf736` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
 
 ## Regenerating
 

@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: Mountain-View-Staging/marquee-cartridge-spec
-          ref: 4689d8e6a13622b248583fd57342b22b20667a81
+          ref: 46cf7367dc20fd019986349406eb13736fe600b6
           path: spec
       - uses: actions/setup-node@v4
         with:
