@@ -1,0 +1,92 @@
+{
+  "assets" : [
+    {
+      "file" : "assets/backing-portrait.jpg",
+      "height" : 3840,
+      "id" : "backing-portrait",
+      "kind" : "image",
+      "width" : 2160
+    },
+    {
+      "file" : "assets/backing-landscape.jpg",
+      "height" : 2160,
+      "id" : "backing-landscape",
+      "kind" : "image",
+      "width" : 3840
+    },
+    {
+      "file" : "assets/mark-white.png",
+      "height" : 240,
+      "id" : "mark-white",
+      "kind" : "image",
+      "width" : 800
+    }
+  ],
+  "colour" : {
+    "palette" : {
+      "primary" : "#2E9BFF",
+      "quaternary" : "#5E7188",
+      "secondary" : "#122B5C",
+      "tertiary" : "#FFB547"
+    },
+    "text" : {
+      "mutedOnLight" : "#4F5B6E",
+      "onDark" : "#F7F9FC",
+      "onLight" : "#0D1A30"
+    }
+  },
+  "company" : "example",
+  "displayName" : "Example 2026",
+  "fonts" : {
+    "family" : {
+      "cssFamily" : "Inter",
+      "display" : "InterDisplay-Black",
+      "faces" : [
+        {
+          "italic" : "Inter-Italic",
+          "regular" : "Inter-Regular",
+          "upTo" : 449
+        },
+        {
+          "italic" : null,
+          "regular" : "Inter-SemiBold",
+          "upTo" : 649
+        },
+        {
+          "italic" : "Inter-BoldItalic",
+          "regular" : "Inter-Bold",
+          "upTo" : 1000
+        }
+      ],
+      "family" : "Inter",
+      "files" : {
+        "apple" : [
+          "a1baf165-2b0d-4269-a5fa-7c75cd29d595.otf",
+          "431a2f19-10ca-4b59-b2ad-26522aca34db.otf",
+          "76aff0f7-f213-4074-be12-1061ba89cb40.otf",
+          "ecb31ebf-9f17-4a58-a81b-e57a6da7e90b.otf",
+          "9ad71ac9-deff-4b3b-90ff-b17571a7690f.otf",
+          "b77e4e7c-edfe-40f3-93d0-36349d1f1499.otf"
+        ],
+        "web" : [
+          "a0088b72-fc86-4984-9f1e-24342fd5da56.woff2",
+          "7c5c322f-2496-49e9-946f-853f45e5505d.woff2",
+          "883016ed-174b-4b73-813f-18bdb0feb8be.woff2",
+          "f2cf4856-d062-44ba-bd68-ddeace4c414f.woff2",
+          "f9f12ffb-5bb9-4d72-84fc-b4980f3c3b31.woff2",
+          "922a6f64-57d5-48a9-a13a-9ceb780a96a3.woff2"
+        ]
+      },
+      "lineHeight" : 1.21,
+      "tabularFigures" : "tnum"
+    }
+  },
+  "format" : "1.1",
+  "licence" : {
+    "agreement" : "EXAMPLE-0001",
+    "holder" : "Example Co",
+    "scope" : "test signage, all platforms"
+  },
+  "style" : "example-2026",
+  "version" : 1
+}
