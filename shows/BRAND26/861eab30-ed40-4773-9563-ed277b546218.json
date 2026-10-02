@@ -61,20 +61,20 @@
       "family" : "Inter",
       "files" : {
         "apple" : [
-          "a1baf165-2b0d-4269-a5fa-7c75cd29d595.otf",
-          "431a2f19-10ca-4b59-b2ad-26522aca34db.otf",
-          "76aff0f7-f213-4074-be12-1061ba89cb40.otf",
-          "ecb31ebf-9f17-4a58-a81b-e57a6da7e90b.otf",
-          "9ad71ac9-deff-4b3b-90ff-b17571a7690f.otf",
-          "b77e4e7c-edfe-40f3-93d0-36349d1f1499.otf"
+          "a5912df6-138c-4eba-8c8d-8ed86f16c755.otf",
+          "d3663d27-a02b-4da8-bd31-755e35b52fc7.otf",
+          "0ef92264-6840-496d-8fdd-6ce848320915.otf",
+          "7f946606-01ca-4bfa-9a8b-0c201c7d70e7.otf",
+          "52d3cc85-19f9-4bf6-9a9d-465838499303.otf",
+          "ab170893-e9b9-40c7-9a86-a0ec902bcda1.otf"
         ],
         "web" : [
-          "a0088b72-fc86-4984-9f1e-24342fd5da56.woff2",
-          "7c5c322f-2496-49e9-946f-853f45e5505d.woff2",
-          "883016ed-174b-4b73-813f-18bdb0feb8be.woff2",
-          "f2cf4856-d062-44ba-bd68-ddeace4c414f.woff2",
-          "f9f12ffb-5bb9-4d72-84fc-b4980f3c3b31.woff2",
-          "922a6f64-57d5-48a9-a13a-9ceb780a96a3.woff2"
+          "991efb3d-2d11-4056-b8fc-784bc784e692.woff2",
+          "43915416-ac95-4294-a8a7-20960910645c.woff2",
+          "727a23df-8a40-4e27-956b-3d6d2eb5223f.woff2",
+          "50b44e98-cbd7-40cc-85a0-1af342481006.woff2",
+          "f7fcfe59-9f7e-4096-94b1-682aa74b5a59.woff2",
+          "d54802ba-c2f0-4b9b-98e0-3ef7b0ad6e8c.woff2"
         ]
       },
       "lineHeight" : 1.21,
