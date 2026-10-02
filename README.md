@@ -21,7 +21,7 @@ show to play without touching a live service.
 |---|---|
 | `shows/<CODE>/` | One show. It is a Studio project folder and, file for file, what a Surface fetches: `_studio/Marquee.db` (the authoring database), `project.db` and one `<SURFACE>.db` per surface (published cartridges, format 25.0.1), and every media file and rendition at the root under its own name. |
 | `shows/<CODE>/media.lock.json` | Every file of the show with its size and SHA-256. |
-| `brands/<company>/<style>/<version>/` | A style book as a brand portal publishes one, in the Marquee Branding Specification's §7.2 layout: `style.json`, `fonts/apple/*.otf`, `fonts/web/*.woff2`, `assets/…`. A stand-in portal for import tests; `BRAND26` imports it. One today: `example/example-2026/1`. |
+| `brands/<company>/<style>/<version>/` | A style book as a brand portal publishes one, in the Marquee Branding Specification's §7.2 layout: `style.json`, `fonts/apple/*.otf`, `fonts/web/*.woff2`, `assets/…`. A stand-in portal for import tests (the Template Builder's brand import); `BRAND26` takes its backing and mark from it. One today: `example/example-2026/1`. |
 | `brands/media.lock.json` | Every file under `brands/` with its size and SHA-256. |
 | `LICENSES/` | The licences of what this repository ships under a licence other than its own: `Inter-OFL-1.1.txt`. |
 | `legacy/` | Two synthetic pre-v25 artifacts a v25 reader must refuse, and what it must say ([legacy/README.md](legacy/README.md)). |
@@ -119,34 +119,23 @@ orientation can play the sample: 7 files, 3 for the portrait lane and 5 for the 
 
 ### `BRAND26` — the branded show
 
-Two venue days, 2026-09-14 and 2026-09-15, `America/Los_Angeles`. The style book
-[`example/example-2026/1`](#the-style-book-exampleexample-20261) imported the way Studio imports
-one — every face of every platform as ordinary media, `style.json` rewritten to the names the faces
-were delivered under and imported itself, every item marked with the style's address, the
-project's reference recorded — and one room's session board, in both layouts, dressed in it.
+Two venue days, 2026-09-14 and 2026-09-15, `America/Los_Angeles`, and one room's session board, in
+both layouts. **Its brand is its session board templates'** (the Cartridge Specification §9: a
+cartridge carries no brand of its own): each template package carries its family, its text pair and
+its faces. The room is dressed in the backing and mark selected from the catalogue of the style book
+[`example/example-2026/1`](#the-style-book-exampleexample-20261) — the stand-in portal the Template
+Builder imports a brand from. The show itself carries no style book, no typeface and no `style.json`.
 
 | | |
 |---|---|
-| **Media** | 18 files: 13 **brand members** (6 `font/otf`, 6 `font/woff2`, the delivered `style.json`), 3 assets selected from the style's catalogue (the backing in both orientations, the mark), each the portal's file byte for byte, and 2 **session board template packages** (`application/zip`, specification §5.15 and `TEMPLATE.md`): `example-board-v1.marqueetemplate.zip`, the Show's template, and `example-board-two-v1.marqueetemplate.zip`, adapted from it (`basedOn`, one CSS rule — a larger title) and set on the second session set. Both are the specification's reference template, zipped by the generator. 5 generated renditions (HEIC `optimized` for all three assets, JPEG `webOptimized` for the two backings; the mark, a PNG with alpha, has none; a package is never renditioned). |
+| **Media** | 5 files: 3 assets selected from the style's catalogue (the backing in both orientations, the mark), each the portal's file byte for byte, and 2 **session board template packages** (`application/zip`, specification §5.15 and `TEMPLATE.md`): `example-board-v1.marqueetemplate.zip`, the Show's template, and `example-board-two-v1.marqueetemplate.zip`, adapted from it (`basedOn`, one CSS rule — a larger title) and set on the second session set. Both are the specification's reference template, zipped by the generator; each carries the Inter faces it draws with. 5 generated renditions (HEIC `optimized` for all three assets, JPEG `webOptimized` for the two backings; the mark, a PNG with alpha, has none; a package is never renditioned). |
 | **Sessions** | 48: one on every hour of both days, 45 minutes each, in one room ("Main hall"). Titles of every length, with accents, an en dash, an ampersand and a curly apostrophe; the two breaks name no presenter. Whenever a Surface opens the show, a session is on or starts within 15 minutes. |
 | **Boards** | Two session sets over the same sessions, both named for the room, both with the style's backing and mark; a set carries no render mode (which layouts a sign shows is the device's board variant, §5.15). The first renders with the Show's template, the second with its own (`session_set.template_item_id`), each with its `template_settings` (`{ "vars": { "sponsorName": … } }`). The playlist **"Boards"** holds both, on from 00:00 of each day. |
-| **Published** | `project.db` (rev 1): no files — the style book and the templates ride in the surface cartridge; `project.db` keeps the address and the template settings and drops the pointers. `BRAND1.db` (rev 1), location `BRAND1-A`, the Boards on its one schedule: 18 files, 23 renditions. |
+| **Published** | `project.db` (rev 1): 1 file — the Show's template, whose `clock` layout is the project-only clock; the backing rides in the surface cartridge. `BRAND1.db` (rev 1), location `BRAND1-A`, the Boards on its one schedule: 5 files. |
 
-**Files per lane:** a portrait device fetches **17** of `BRAND1.db`'s 18 files (the 13 brand members,
-the two template packages, the portrait backing, the mark), and a landscape device 17 (the landscape
-backing instead). **Brand members per platform:** 6 Apple faces and 6 web faces plus the `style.json` —
-all 13 in every lane, because a cartridge carries every platform's faces and each client registers its
-own. **A template package is on every lane too** (§5.15): a device of either orientation renders the
-board with it.
-
-Finding them: the project's `brand_style` is `example/example-2026/1` and its `brand_style_item_id`
-names the item **"Style book — example/example-2026/1"**, whose file is the delivered `style.json`.
-Each face is an item named for its file (`Inter-Regular.otf`, `Inter-Regular.woff2`, …) with that
-file in its portrait slot, and every member carries `brand_member = example/example-2026/1`. The
-delivered `style.json` is the portal's book with each font path renamed to its deliverable name,
-serialized as Apple's `JSONSerialization` writes it (sorted keys, `"key" : value`, no trailing
-newline). Its `assets` still name the portal's paths (`assets/…`): an import delivers faces; the
-backing and mark reach the board as the session sets' ordinary media.
+**Files per lane:** a portrait device fetches the two template packages, the portrait backing and the
+mark; a landscape device the landscape backing instead. **A template package is on every lane**
+(§5.15): a device of either orientation renders the board with it.
 
 ### The style book `example/example-2026/1`
 
@@ -203,8 +192,8 @@ system's own face, the style book's mark in Inter.
   1920 px, H.264 clips at most 1080p); a PNG with alpha and a WebP original have no web rendition
   (they are web-ready as they are), and some clips have a `wifiOptimized` HEVC rung. In `EDIT26`
   the H.264 countdowns have no `optimized` rendition, as in the sample they reproduce.
-- **Style book:** only `BRAND26` carries one. `RIG26`'s and `EDIT26`'s boards draw on each
-  platform's baseline design.
+- **Style book:** no show carries one (§9). `brands/` holds the stand-in portal's book, which the
+  Template Builder imports a brand from. `RIG26`'s and `EDIT26`'s boards draw the default template.
 
 ## Using a show in a test
 
@@ -214,8 +203,9 @@ system's own face, the style book's mark in Inter.
   (`cp`, `FileManager.copyItem` and Node's `copyFileSync` alike), so a copy of a locked
   database must be made writable (`chmod u+w`) before Studio's data layer can open it; a
   `sqlite3 ".backup"` copy is writable already. A fresh clone is unlocked.
-- **A style book is imported from a copy too.** Copy `brands/example/example-2026/1/` (or read
-  it) as a portal's version folder: `style.json` plus the files it names. Nothing writes there.
+- **A brand is imported from a copy too.** Copy `brands/example/example-2026/1/` (or read it) as
+  a portal's version folder: `style.json` plus the files it names — what the Template Builder's
+  import reads. Nothing writes there.
 - **Reset:** `scripts/reset.sh` puts `shows/`, `brands/` and `legacy/` back exactly as committed.
 - The authoring databases are at the schema's newest migration, committed in rollback-journal
   mode with no WAL; Studio switches a copy to WAL when it opens it.
@@ -229,7 +219,7 @@ system's own face, the style book's mark in Inter.
 | `python3 scripts/leak-scan.py` | CI, and before the Pages deploy | Every file, binary media included (as its printable strings): no live host, machine path, brand name, code-shaped token or internal id. |
 | `scripts/verify.sh` | CI, and before the Pages deploy | Every `media.lock.json` against its folder: each file at its size and SHA-256, nothing unlisted. |
 | `scripts/budget.sh` | CI | Every file under 20 MB; the repository under 80 MB. |
-| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `46cf736` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; a cartridge that names a style book carries every face its `style.json` declares, in every lane; `legacy/` is refused with the expected codes. |
+| `node --no-warnings scripts/load-cartridges.mjs --engine <spec>/engine/dist/node.js` | CI, against the specification at `b075670` | Every cartridge loads in the reference engine's Loader with no warning; every file a cartridge names verifies; no cartridge delivers a typeface or a JSON file (no style book, §9); `legacy/` is refused with the expected codes. |
 
 ## Regenerating
 
@@ -237,5 +227,5 @@ The shows are generated by a tool kept outside this repository — through the s
 Studio writes with, from the migrator to the cartridge writer — and committed. Never edit a
 show by hand: regenerate, run the checks, commit. A regeneration renames every media file and
 re-encodes every clip, and the lock files change with them. A show can be regenerated alone —
-`BRAND26` with the style book it imports — leaving every other show, and its lock, as it was.
+`BRAND26` with the stand-in style book — leaving every other show, and its lock, as it was.
 The style book itself regenerates byte for byte: a published version never changes its files.

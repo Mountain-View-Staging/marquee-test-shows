@@ -1,134 +1,69 @@
 {
   "files" : [
     {
-      "name" : "0ef92264-6840-496d-8fdd-6ce848320915.otf",
-      "sha256" : "0a4d30778fa2dc239368d90fd854b88b27e7ede737450da72686a90eca66f02c",
-      "size" : 629912
-    },
-    {
-      "name" : "1ab28422-e4a3-44a1-b976-192b1742466a.zip",
-      "sha256" : "77114a8f511d2fcd124cccc4a4cc371a3d09369e1ffd8837d6e16bcc0df1fc19",
-      "size" : 505111
-    },
-    {
-      "name" : "29356f22-25ec-48bb-8ca3-14eb8a3c5043.heic",
-      "sha256" : "a8bd11e9c6d269bfa57841dbe9115f7414bdf2a4571ad6460e177d4cf610f7fa",
-      "size" : 12371
-    },
-    {
-      "name" : "38310eb7-5c6d-42fd-9c10-bced850c1e33.png",
-      "sha256" : "b322f64a8d208007ba291007c092c025218c6a17591e1b0f439f9fa0d3f60560",
-      "size" : 17738
-    },
-    {
-      "name" : "3d825e59-42b0-4aec-abb0-c626fc7943e8.jpg",
+      "name" : "0541b32a-fb2c-4628-9a6c-5e825fc295fe.jpg",
       "sha256" : "42a1e7f26c39bbb8e259ab492ba9bb46f1d828b990d9018eef57b7ba94e771c7",
       "size" : 455434
     },
     {
-      "name" : "43915416-ac95-4294-a8a7-20960910645c.woff2",
-      "sha256" : "2d078cb3bc8f934740d53b39dd23b0678f2f97477e49ec785dd9d8acd8b96bfc",
-      "size" : 117700
-    },
-    {
-      "name" : "44589a81-6495-4ebf-b088-a17b11d1a088.zip",
-      "sha256" : "3de82ac3ff588230d384f92ab8a12b1d37999cc49e52b6f255c8c21149cbb762",
-      "size" : 505027
-    },
-    {
-      "name" : "50b44e98-cbd7-40cc-85a0-1af342481006.woff2",
-      "sha256" : "fa888127b6da015b65569f0351f3b5c391ad928904951f1c20e9f8462a8d95ea",
-      "size" : 114840
-    },
-    {
-      "name" : "52d3cc85-19f9-4bf6-9a9d-465838499303.otf",
-      "sha256" : "84e07cd77951a855c668f71e63af261f42d019dc80e963326b4c560b1fca8dcd",
-      "size" : 609372
-    },
-    {
-      "name" : "727a23df-8a40-4e27-956b-3d6d2eb5223f.woff2",
-      "sha256" : "5cb7103e4e605989afebc03d989c79201e54b21b5183db33981f70db9178a301",
-      "size" : 114812
-    },
-    {
-      "name" : "7f2a191e-ab72-4aec-a150-4ef4938f8887.jpg",
-      "sha256" : "e3706e1facf78022589bcd93ff390ff037cb1e24a3d8030aa35c8e4aff1f4b1e",
-      "size" : 68446
-    },
-    {
-      "name" : "7f62f9aa-b78e-48a6-a1ee-034b7786eeea.heic",
-      "sha256" : "b8b8326d504d8ccc1e1b13b4b4213cd4a5100dd185ce57a61d2919c131ff8700",
-      "size" : 198987
-    },
-    {
-      "name" : "7f946606-01ca-4bfa-9a8b-0c201c7d70e7.otf",
-      "sha256" : "9fc6261e817d0b1b2bf1953d8799bb1c837d11aeebbf83ae352e7b4d6de6425d",
-      "size" : 631880
-    },
-    {
-      "name" : "861eab30-ed40-4773-9563-ed277b546218.json",
-      "sha256" : "e05a0532a0e87b66e574ebdd541cb111b5db15de74b5d05cee5358b1e8dbfc33",
-      "size" : 2337
-    },
-    {
-      "name" : "991efb3d-2d11-4056-b8fc-784bc784e692.woff2",
-      "sha256" : "e06f6b1bc553aaea4e4668023ed0ab0a147129c3107f511bc7d03d361b0ae085",
-      "size" : 111268
-    },
-    {
-      "name" : "BRAND1.db",
-      "sha256" : "ffa6c64b15ed00d1bd9545c8e1a3109c31b36e0f9aa9e39b259a30dfa313a862",
-      "size" : 126976
-    },
-    {
-      "name" : "_studio/Marquee.db",
-      "sha256" : "bbcfd687ae83a8d61e55f9f252cbc9707c5f4b271b756f78985188f55b2cb39c",
-      "size" : 278528
-    },
-    {
-      "name" : "a5912df6-138c-4eba-8c8d-8ed86f16c755.otf",
-      "sha256" : "d4f2b9e148059a15f014cb0f0b8fea8cd11bfa447dd483bedf1b0adc0e2ba799",
-      "size" : 609600
-    },
-    {
-      "name" : "ab170893-e9b9-40c7-9a86-a0ec902bcda1.otf",
-      "sha256" : "84ca5a51b3303c01b48cdd271637d3d20c263e09d00ec0ff2a945f122492a4d0",
-      "size" : 623980
-    },
-    {
-      "name" : "bcb76acd-8677-4eaf-aa4f-bcaa6ea46a3a.jpg",
-      "sha256" : "5e00371bd45e4d851eb114416eca49e7557e951dd57e06eb9c1aef734d4f2fe3",
-      "size" : 67335
-    },
-    {
-      "name" : "cdc886ec-c979-46fb-8366-d51627f21d6b.jpg",
+      "name" : "60c45213-b383-4493-aa58-b29eeda01a9a.jpg",
       "sha256" : "915a404cff69091aa3f528fa90a016627c5677c48b8492edba2e3ded7455814a",
       "size" : 451733
     },
     {
-      "name" : "d3663d27-a02b-4da8-bd31-755e35b52fc7.otf",
-      "sha256" : "3bdf49f72ad2f2959a2619ceef700784504f6d17f502e2e2bc6edce5d43ca631",
-      "size" : 589784
+      "name" : "68ae2d7a-8f2d-4fda-b693-e566f1b3d60d.png",
+      "sha256" : "b322f64a8d208007ba291007c092c025218c6a17591e1b0f439f9fa0d3f60560",
+      "size" : 17738
     },
     {
-      "name" : "d54802ba-c2f0-4b9b-98e0-3ef7b0ad6e8c.woff2",
-      "sha256" : "05650cb83c70fda2a465eade0c0a1a6c25d37ec49df3cd74b7e564683f9729f1",
-      "size" : 110308
+      "name" : "86b894c3-247c-4d85-84d2-31f9c74a980d.jpg",
+      "sha256" : "e3706e1facf78022589bcd93ff390ff037cb1e24a3d8030aa35c8e4aff1f4b1e",
+      "size" : 68446
     },
     {
-      "name" : "f7fcfe59-9f7e-4096-94b1-682aa74b5a59.woff2",
-      "sha256" : "4a10532d76c90c4597c0ad4bfc9284600e597d3012dd1ec16c1d44e0ad0058ab",
-      "size" : 121500
-    },
-    {
-      "name" : "fc22a4da-91dd-4599-b38c-622e3de7e8be.heic",
+      "name" : "964fd6f8-d541-4292-b5fd-4e86486fc0a0.heic",
       "sha256" : "1bc780097da30ca404da2d767421f810d0855eaea27a0f0bf8e03e22693f0e8d",
       "size" : 199343
     },
     {
+      "name" : "BRAND1.db",
+      "sha256" : "8390dca784b648c2354d2db5f5022590e07907d6adb98e855b4fecbf7f337706",
+      "size" : 126976
+    },
+    {
+      "name" : "_studio/Marquee.db",
+      "sha256" : "4740eba76ad67503865ad391ed16fa6af1c36b2d012b532109b14a32358bba0e",
+      "size" : 266240
+    },
+    {
+      "name" : "a450c6f8-a6db-4a46-93b6-29de5827635b.heic",
+      "sha256" : "b8b8326d504d8ccc1e1b13b4b4213cd4a5100dd185ce57a61d2919c131ff8700",
+      "size" : 198987
+    },
+    {
+      "name" : "b095e5b4-b2fd-487e-8b76-9361afc5a791.zip",
+      "sha256" : "77114a8f511d2fcd124cccc4a4cc371a3d09369e1ffd8837d6e16bcc0df1fc19",
+      "size" : 505111
+    },
+    {
+      "name" : "e0441bbc-13e5-4cb8-8c10-fb2c25742605.heic",
+      "sha256" : "a8bd11e9c6d269bfa57841dbe9115f7414bdf2a4571ad6460e177d4cf610f7fa",
+      "size" : 12371
+    },
+    {
+      "name" : "ecdd3b36-4635-4e9a-8033-c72877eb378d.jpg",
+      "sha256" : "5e00371bd45e4d851eb114416eca49e7557e951dd57e06eb9c1aef734d4f2fe3",
+      "size" : 67335
+    },
+    {
+      "name" : "f852301e-d854-415d-bbdc-aa70c03f1cc0.zip",
+      "sha256" : "3de82ac3ff588230d384f92ab8a12b1d37999cc49e52b6f255c8c21149cbb762",
+      "size" : 505027
+    },
+    {
       "name" : "project.db",
-      "sha256" : "094b5ba75dddd96f86ab7cbf54b801e92564af98ed30fd978bc719047c98394d",
-      "size" : 49152
+      "sha256" : "a549641d1b133f298669f541a4887623c8a8849bde95d6c2c40093bb09818ecc",
+      "size" : 40960
     }
   ],
   "folder" : "shows/BRAND26",
