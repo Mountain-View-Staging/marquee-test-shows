@@ -21,6 +21,7 @@ show to play without touching a live service.
 |---|---|
 | `shows/<CODE>/` | One show. It is a Studio project folder and, file for file, what a Surface fetches: `_studio/Marquee.db` (the authoring database), `project.db` and one `<SURFACE>.db` per surface (published cartridges, format 25.0.1), and every media file and rendition at the root under its own name. |
 | `shows/<CODE>/media.lock.json` | Every file of the show with its size and SHA-256. |
+| `shows/<CODE>/_published.json` | The published index: the cartridges the show has published — `project.db` first, then each surface — with each one's revision, generation time, size and ETag, as the cloud writes it beside them on every publish. JSON `{ format: 1, projectCode, updatedAt, cartridges: [{ fileName, kind, surfaceCode, publishedRevision, generatedAt, size, etag }] }`. A reader with only the show code learns the show's surfaces from it. |
 | `brands/<company>/<style>/<version>/` | A style book as a brand portal publishes one, in the Marquee Branding Specification's §7.2 layout: `style.json`, `fonts/apple/*.otf`, `fonts/web/*.woff2`, `assets/…`. A stand-in portal for import tests (the Template Builder's brand import); `BRAND26` takes its backing and mark from it. One today: `example/example-2026/1`. |
 | `brands/media.lock.json` | Every file under `brands/` with its size and SHA-256. |
 | `LICENSES/` | The licences of what this repository ships under a licence other than its own: `Inter-OFL-1.1.txt`. |

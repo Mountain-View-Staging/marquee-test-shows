@@ -31,6 +31,11 @@
       "size" : 126976
     },
     {
+      "name" : "_published.json",
+      "sha256" : "e3b9deb19d39c5fc3b3bb13eede92b0c83594858b6b1fc77ab27b5152ed7a6a7",
+      "size" : 415
+    },
+    {
       "name" : "_studio/Marquee.db",
       "sha256" : "4740eba76ad67503865ad391ed16fa6af1c36b2d012b532109b14a32358bba0e",
       "size" : 266240
